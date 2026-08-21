@@ -1,0 +1,9 @@
+node_modules/
+frontend/node_modules/
+web-backend/node_modules/
+
+frontend/dist/
+
+*.o
+
+source_code.p0

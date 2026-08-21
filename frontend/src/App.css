@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background: #303030;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+#root {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   FLOATING IDE WINDOW
+   ========================= */
+
+.ide {
+    width: 760px;
+    height: 760px;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #1e1e1e;
+
+    overflow: hidden;
+
+    border:
+        3px solid #ffffff;
+
+    box-shadow:
+        12px 12px 0 #000000,
+        0 0 0 2px #000080;
+}
+
+
+/* =========================
+   IDE HEADER
+   ========================= */
+
+.ide-header {
+    background: #000080;
+
+    padding:
+        12px
+        18px;
+
+    border-bottom:
+        2px solid #ffffff;
+
+    flex-shrink: 0;
+}
+
+
+.ide-header h1 {
+    margin:
+        0
+        0
+        12px
+        0;
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    font-family:
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================
+   HEADER BUTTONS
+   ========================= */
+
+.header-actions {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.header-actions button {
+    padding:
+        7px
+        16px;
+
+    border:
+        2px outset #d0d0d0;
+
+    background:
+        #c0c0c0;
+
+    color:
+        black;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+}
+
+
+.header-actions button:hover {
+    background:
+        white;
+}
+
+
+.header-actions button:active {
+    border:
+        2px inset #d0d0d0;
+
+    transform:
+        translateY(1px);
+}
+
+
+/* =========================
+   COMPILE BUTTON
+   ========================= */
+
+.compile-button {
+    background:
+        #00a000 !important;
+
+    color:
+        white !important;
+}
+
+
+.compile-button:hover {
+    background:
+        #00c000 !important;
+}
+
+
+/* =========================
+   FILE BAR
+   ========================= */
+
+.file-bar {
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 18px;
+
+    background:
+        #008080;
+
+    color:
+        white;
+
+    border-bottom:
+        2px solid #000;
+
+    font-weight:
+        bold;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   EDITOR
+   ========================= */
+
+.editor-container {
+    flex: 1;
+
+    min-height: 0;
+
+    background:
+        #1e1e1e;
+
+    border-bottom:
+        2px solid #777;
+}
+
+
+/* =========================
+   OUTPUT PANEL
+   ========================= */
+
+.output-panel {
+    height: 170px;
+
+    background:
+        black;
+
+    border-top:
+        2px solid #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+
+.output-title {
+    padding:
+        7px
+        15px;
+
+    background:
+        #000080;
+
+    color:
+        yellow;
+
+    font-weight:
+        bold;
+
+    border-bottom:
+        1px solid #777;
+}
+
+
+.output-content {
+    flex: 1;
+
+    padding:
+        10px
+        15px;
+
+    overflow-y:
+        auto;
+
+    color:
+        #00ff00;
+
+    font-size:
+        14px;
+
+    white-space:
+        pre-wrap;
+}
+
+
+.output-line {
+    margin-bottom:
+        4px;
+}
+
+
+/* =========================
+   SMALLER SCREENS
+   ========================= */
+
+@media (
+    max-width: 800px
+) {
+    .ide {
+        width: 90vw;
+        height: 85vh;
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "prototype-0-ide",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "make && npm --prefix frontend install && npm --prefix frontend run build && npm --prefix web-backend install",
+    "start": "node web-backend/server.js"
+  }
+}

@@ -466,7 +466,7 @@ function App() {
         try {
             const response =
                 await fetch(
-                    "http://localhost:3001/compile",
+                    "/compile",
                     {
                         method: "POST",
 
@@ -505,10 +505,21 @@ function App() {
                     ]
             );
         }
+        // catch (error) {
+        //     setOutput([
+        //         "Error: Could not connect to compiler backend.",
+        //         "Make sure server.js is running."
+        //     ]);
+        // }
         catch (error) {
+            console.error(
+                "Compile request failed:",
+                error
+            );
+
             setOutput([
-                "Error: Could not connect to compiler backend.",
-                "Make sure server.js is running."
+                "Error: Could not reach /compile.",
+                "Check the Render deployment logs."
             ]);
         }
     }

@@ -605,6 +605,40 @@ function App() {
             <main className="editor-container">
 
                 <Editor
+                    // height="100%"
+                    // defaultLanguage="plaintext"
+                    // value={code}
+                    // onChange={
+                    //     (value) =>
+                    //         setCode(
+                    //             value || ""
+                    //         )
+                    // }
+                    // theme="vs-dark"
+                    // options={{
+                    //     fontSize: 16,
+
+                    //     fontFamily:
+                    //         "'Courier New', monospace",
+
+                    //     lineNumbers: "on",
+
+                    //     minimap: {
+                    //         enabled: false
+                    //     },
+
+                    //     scrollBeyondLastLine: false,
+
+                    //     automaticLayout: true,
+
+                    //     cursorBlinking: "blink",
+
+                    //     cursorStyle: "line",
+
+                    //     padding: {
+                    //         top: 10
+                    //     }
+                    // }}
                     height="100%"
                     defaultLanguage="plaintext"
                     value={code}

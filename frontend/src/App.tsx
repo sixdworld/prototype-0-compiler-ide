@@ -450,7 +450,12 @@ import "./App.css";
 
 function App() {
     const [code, setCode] =
-        useState("");
+        useState(
+            `>>>
+            p: "hi! welcome to prototype-0 IDE! pls refer to Syntax button to learn the syntax of prototype-0.\\n"
+            p: "delete this sample code and start ur own. code away!"
+            <<<`
+        );
 
     const [output, setOutput] =
         useState<string[]>([

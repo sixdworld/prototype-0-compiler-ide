@@ -442,19 +442,26 @@
 
 // export default App;
 
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import Editor from "@monaco-editor/react";
+// import { useState } from "react";
+// import Editor from "@monaco-editor/react";
 
 import "./App.css";
 
 
 function App() {
+
+    const [fontLoaded, setFontLoaded] =
+        useState(false);
+
     const [code, setCode] =
         useState(
             `>>>
-            p: "hi! welcome to prototype-0 IDE! pls refer to Syntax button to learn the syntax of prototype-0.\\n"
-            p: "delete this sample code and start ur own. code away!"
-            <<<`
+        p: "hi! welcome to prototype-0 IDE! pls refer to Syntax button to learn the syntax of prototype-0.\\n"
+        p: "delete this sample code and start ur own. code away!"
+        <<<`
         );
 
     const [output, setOutput] =
@@ -462,6 +469,31 @@ function App() {
             "Welcome to <prototype 0> IDE"
         ]);
 
+    useEffect(
+        () => {
+            document.fonts
+                .load(
+                    '16px "TurboDOS"'
+                )
+                .then(
+                    () => {
+                        console.log(
+                            "TurboDOS font loaded!"
+                        );
+
+                        setFontLoaded(true);
+                    }
+                )
+                .catch(
+                    () => {
+                        console.error(
+                            "TurboDOS font failed to load."
+                        );
+                    }
+                );
+        },
+        []
+    );
 
     async function compileAndRun() {
         setOutput([
@@ -622,80 +654,82 @@ function App() {
 
 
             <main className="editor-container">
+                {fontLoaded && ( 
+                    <Editor
+                        // height="100%"
+                        // defaultLanguage="plaintext"
+                        // value={code}
+                        // onChange={
+                        //     (value) =>
+                        //         setCode(
+                        //             value || ""
+                        //         )
+                        // }
+                        // theme="vs-dark"
+                        // options={{
+                        //     fontSize: 16,
 
-                <Editor
-                    // height="100%"
-                    // defaultLanguage="plaintext"
-                    // value={code}
-                    // onChange={
-                    //     (value) =>
-                    //         setCode(
-                    //             value || ""
-                    //         )
-                    // }
-                    // theme="vs-dark"
-                    // options={{
-                    //     fontSize: 16,
+                        //     fontFamily:
+                        //         "'Courier New', monospace",
 
-                    //     fontFamily:
-                    //         "'Courier New', monospace",
+                        //     lineNumbers: "on",
 
-                    //     lineNumbers: "on",
+                        //     minimap: {
+                        //         enabled: false
+                        //     },
 
-                    //     minimap: {
-                    //         enabled: false
-                    //     },
+                        //     scrollBeyondLastLine: false,
 
-                    //     scrollBeyondLastLine: false,
+                        //     automaticLayout: true,
 
-                    //     automaticLayout: true,
+                        //     cursorBlinking: "blink",
 
-                    //     cursorBlinking: "blink",
+                        //     cursorStyle: "line",
 
-                    //     cursorStyle: "line",
-
-                    //     padding: {
-                    //         top: 10
-                    //     }
-                    // }}
-                    width="100%"
-                    height="100%"
-                    defaultLanguage="plaintext"
-                    value={code}
-                    onChange={
-                        (value) =>
-                            setCode(
-                                value || ""
-                            )
-                    }
-                    theme="vs-dark"
-                    options={{
-                        fontSize: 16,
-
-                        // fontFamily:
-                        //     "'Courier New', monospace",
-                        fontFamily:
-                            "'TurboDOS', 'Courier New', monospace",
-
-                        lineNumbers: "on",
-
-                        minimap: {
-                            enabled: false
-                        },
-
-                        scrollBeyondLastLine: false,
-
-                        automaticLayout: true,
-
-                        cursorBlinking: "blink",
-
-                        cursorStyle: "line",
-
-                        padding: {
-                            top: 10
+                        //     padding: {
+                        //         top: 10
+                        //     }
+                        // }}
+                        width="100%"
+                        height="100%"
+                        defaultLanguage="plaintext"
+                        value={code}
+                        onChange={
+                            (value) =>
+                                setCode(
+                                    value || ""
+                                )
                         }
-                    }}
-                />
+                        theme="vs-dark"
+                        options={{
+                            fontSize: 16,
+
+                            // fontFamily:
+                            //     "'Courier New', monospace",
+                            // fontFamily:
+                            //     "'TurboDOS', 'Courier New', monospace",
+                            fontFamily:
+                                "TurboDOS",
+                            lineNumbers: "on",
+
+                            minimap: {
+                                enabled: false
+                            },
+
+                            scrollBeyondLastLine: false,
+
+                            automaticLayout: true,
+
+                            cursorBlinking: "blink",
+
+                            cursorStyle: "line",
+
+                            padding: {
+                                top: 10
+                            }
+                        }}
+                    />
+                    )}
 
             </main>
 

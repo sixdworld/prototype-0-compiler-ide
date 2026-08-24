@@ -48,7 +48,7 @@ body {
 /* =========================
    FLOATING IDE WINDOW
    ========================= */
-
+/* 
 .ide {
     width: 760px;
     height: 760px;
@@ -69,8 +69,36 @@ body {
     box-shadow:
         12px 12px 0 #000000,
         0 0 0 2px #000080;
-}
+} */
 
+.ide {
+    position: relative;
+
+    width: 760px;
+    height: 760px;
+
+    min-width: 500px;
+    min-height: 500px;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    resize: both;
+
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #1e1e1e;
+
+    border:
+        3px solid #ffffff;
+
+    box-shadow:
+        12px 12px 0 #000000,
+        0 0 0 2px #000080;
+}
 
 /* =========================
    IDE HEADER
@@ -334,6 +362,35 @@ body {
 .output-line {
     margin-bottom:
         4px;
+}
+
+/* =========================
+   RESIZE GRIP
+   ========================= */
+
+.resize-grip {
+    position: absolute;
+
+    right: 6px;
+    bottom: 2px;
+
+    width: 22px;
+    height: 22px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: nwse-resize;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+
+    pointer-events: none;
 }
 
 

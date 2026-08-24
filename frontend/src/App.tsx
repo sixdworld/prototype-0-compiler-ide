@@ -760,6 +760,10 @@ function App() {
 
             </section>
 
+            <div className="resize-grip">
+                ◢
+            </div>
+
         </div>
     );
 }

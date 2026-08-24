@@ -1,3 +1,14 @@
+@font-face {
+    font-family: "TurboDOS";
+
+    src:
+        url("/fonts/Mx437_IBM_VGA_8x16.ttf")
+        format("truetype");
+
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
 }

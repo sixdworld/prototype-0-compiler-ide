@@ -592,6 +592,25 @@ function App() {
                         Compile & Run
                     </button>
 
+                    <button
+                        className="syntax-button"
+                        onClick={() => {
+                            setOutput([
+                                "Prototype-0 Syntax",
+                                "",
+                                "Use >>> to begin a program.",
+                                'p: "text" prints text.',
+                                "",
+                                "Example:",
+                                ">>>",
+                                'p: "Hello, World!\\n"',
+                                "<<<"
+                            ]);
+                        }}
+                    >
+                        Syntax
+                    </button>
+
                 </div>
 
             </header>
@@ -653,8 +672,10 @@ function App() {
                     options={{
                         fontSize: 16,
 
+                        // fontFamily:
+                        //     "'Courier New', monospace",
                         fontFamily:
-                            "'Courier New', monospace",
+                            "'TurboDOS', 'Courier New', monospace",
 
                         lineNumbers: "on",
 

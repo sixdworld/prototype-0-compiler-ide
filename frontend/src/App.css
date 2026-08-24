@@ -2,7 +2,7 @@
     font-family: "TurboDOS";
 
     src:
-        url("/fonts/Mx437_IBM_VGA_8x16.ttf")
+        url("/fonts/MxPlus_IBM_VGA_8x16.ttf")
         format("truetype");
 
     font-weight: normal;
